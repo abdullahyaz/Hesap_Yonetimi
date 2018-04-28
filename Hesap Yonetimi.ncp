@@ -1,0 +1,26 @@
+<Project>
+  <Name>Hesap Yonetimi</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Kagit</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ModelKagit</Name>
+        <Access>Public</Access>
+        <Location left="64" top="52" />
+        <Size width="193" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int m_Tabaka { get; set; }</Member>
+        <Member type="Property">public string m_KagitCinsi { get; set; }</Member>
+        <Member type="Property">public double m_Sayfa { get; set; }</Member>
+        <Member type="Property">public int m_Adet { get; set; }</Member>
+        <Member type="Property">public double m_Ebat { get; set; }</Member>
+        <Member type="Property">public int m_Birim { get; set; }</Member>
+        <Member type="Property">public double m_Agirlik { get; set; }</Member>
+        <Member type="Property">public double m_Top { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
