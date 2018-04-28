@@ -7,20 +7,76 @@
       <Entity type="Class">
         <Name>ModelKagit</Name>
         <Access>Public</Access>
-        <Location left="64" top="52" />
-        <Size width="193" height="216" />
+        <Location left="68" top="22" />
+        <Size width="275" height="244" />
         <Collapsed>False</Collapsed>
         <Member type="Property">public int m_Tabaka { get; set; }</Member>
         <Member type="Property">public string m_KagitCinsi { get; set; }</Member>
         <Member type="Property">public double m_Sayfa { get; set; }</Member>
         <Member type="Property">public int m_Adet { get; set; }</Member>
-        <Member type="Property">public double m_Ebat { get; set; }</Member>
+        <Member type="Property">public Ebat m_Ebat { get; set; }</Member>
         <Member type="Property">public int m_Birim { get; set; }</Member>
-        <Member type="Property">public double m_Agirlik { get; set; }</Member>
+        <Member type="Property">public double m_Gramaj { get; set; }</Member>
         <Member type="Property">public double m_Top { get; set; }</Member>
+        <Member type="Method">public double KagitTopKontrol(int TabakaAdet)</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Structure">
+        <Name>Ebat</Name>
+        <Access>Public</Access>
+        <Location left="448" top="63" />
+        <Size width="162" height="136" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public double m_Genislik { get; set; }</Member>
+        <Member type="Property">public double m_Yukseklik { get; set; }</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Gramaj</Name>
+        <Access>Public</Access>
+        <Location left="701" top="83" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>Veriler</Name>
+        <Access>Public</Access>
+        <Location left="930" top="83" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>gr115 = 115</Value>
+        <Value>gr70 = 70</Value>
+        <Value>gr80 = 80</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>KagitCinsi</Name>
+        <Access>Public</Access>
+        <Location left="1174" top="83" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>Cinsler</Name>
+        <Access>Public</Access>
+        <Location left="1358" top="159" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>MatKuse</Value>
+        <Value>Samua</Value>
+        <Value>Hamur1</Value>
+        <Value>ParlakKuse</Value>
+      </Entity>
     </Entities>
-    <Relationships />
+    <Relationships>
+      <Relationship type="Association" first="2" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
   </ProjectItem>
 </Project>
