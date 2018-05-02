@@ -30,7 +30,6 @@ namespace Hesap_Yonetimi.Models
                 double TBkSonuc = g * y * M_Gramaj;
                 double TPSonuc = TBkSonuc / Sabit;
                 return TPSonuc * M_Tabaka;
-
             }
 
     }
