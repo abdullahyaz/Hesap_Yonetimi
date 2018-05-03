@@ -49,7 +49,7 @@ namespace Testler
 
             }
             
-            // Baskı yapılacak tabaka ile sayfa ebadı uyuyorsa forma saysını alıyoruz
+            // Baskı yapılacak sayfa tabakaya uyuyormu
             int kagitOlcusuHesapla()
             {
                 M_IsEn += 6;
@@ -90,13 +90,20 @@ namespace Testler
                 return (int)tpFiyat;
             }
 
+            // Baskı için gereken top miktarı
+            double TopMiktari()
+            {
+                return TabakaSayisi() / M_Tabaka[0];
+            }
+
             Console.WriteLine("Bir top kağıdın ağırlığı: " + TopAgirligi(M_TabakaEn, M_TabakaBoy) / 100000+ " kg"); //100000'e bölerek kg sonuç alıyoruz
             Console.WriteLine("Bir Top kağıttan çıkan kitap sayısı: "+TopCikanKitap());
             Console.WriteLine("Baskı için gereken tabaka sayısı: " + TabakaSayisi());
+            Console.WriteLine("Baskı için gereken top sayısı: " + TopMiktari());
             Console.WriteLine("Kitabın Forma Sayısı: " + kagitOlcusuHesapla());
             Console.WriteLine("Bir top kağıdın fiyatı: " + kagitFiyati() / 1000+ " TL"); // TL cinsinden
             Console.WriteLine("Baskı rengine göre kalıp fiyatı: " + kalipFiyat() + " TL");
-            Console.WriteLine("Toplam kağıt tutarı: " + baskiKagitFiyati() / 1000+ "TL");
+            Console.WriteLine("Toplam kağıt tutarı: " + baskiKagitFiyati() / 1000+ "TL"); // TL cinsinden
             Console.Read();
             
         }
