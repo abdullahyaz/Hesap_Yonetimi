@@ -19,8 +19,8 @@ namespace Testler
             int M_IsBoy = 234; //Giriş
             int M_IsSayfa = 624; //Giriş
             int M_BaskiAdedi = 3000; //Giriş
-            int M_TabakaEn = 680; //Giriş
-            int M_TabakaBoy = 1000; //Giriş
+            int M_TabakaEn = 68; //Giriş
+            int M_TabakaBoy = 100; //Giriş
             int M_KacForma = 39; //prop olacak
             double M_TonFiyat = 5542.82; //Giriş Euro veya Dolar TL'ye çevir Euro kur 5,0388
             int M_Renk = 4; //Giriş
@@ -30,6 +30,7 @@ namespace Testler
         // Bir top kağıdın ağırlığı
         double TopAgirligi(int g, int y)
             {
+
                 double TBkSonuc = g * y * M_Gramaj[0];
                 double TPSonuc = TBkSonuc / Sabit;
                 return TPSonuc * M_Tabaka[0];
@@ -52,6 +53,8 @@ namespace Testler
             // Baskı yapılacak sayfa tabakaya uyuyormu
             int kagitOlcusuHesapla()
             {
+                M_TabakaEn *= 10; // cm'yi mm'ye çeviriyoruz
+                M_TabakaBoy *= 10; // cm'yi mm'ye çeviriyoruz
                 M_IsEn += 6;
                 M_IsBoy += 6;
                 int tabakaOlcu = (M_TabakaEn -25) * (M_TabakaBoy -25); //-25 ile payları çıkarıyoruz
@@ -72,7 +75,7 @@ namespace Testler
             // Kağıt ton fiyatına göre kağıt tutarını alıyoruz
             double kagitFiyati()
             {
-                double tpAg = TopAgirligi(M_TabakaEn, M_TabakaBoy) /100; //100'e bölerek sonucu cm2 yapıyoruz
+                double tpAg = TopAgirligi(M_TabakaEn, M_TabakaBoy) /100; //100'e bölerek mm2 sonucu cm2 yapıyoruz
                 double fiyat = tpAg * M_TonFiyat;
                 return fiyat / 1000; // 1000 kg fiyatına bölerek 1 top kağıdın fiyatı alınıyor
             }
@@ -83,11 +86,11 @@ namespace Testler
                 return M_kalipFiyati * kalipSayisi;
             }
 
-            int baskiKagitFiyati()
+            double baskiKagitFiyati()
             {
                 double bFiyat = TabakaSayisi() / M_Tabaka[0];
                 double tpFiyat = bFiyat * kagitFiyati();
-                return (int)tpFiyat;
+                return tpFiyat / 1000; // TL cinsinden
             }
 
             // Baskı için gereken top miktarı
@@ -96,14 +99,14 @@ namespace Testler
                 return TabakaSayisi() / M_Tabaka[0];
             }
 
-            Console.WriteLine("Bir top kağıdın ağırlığı: " + TopAgirligi(M_TabakaEn, M_TabakaBoy) / 100000+ " kg"); //100000'e bölerek kg sonuç alıyoruz
+            Console.WriteLine("Bir top kağıdın ağırlığı: " + TopAgirligi(M_TabakaEn, M_TabakaBoy) / 1000+ " kg"); //1000'e bölerek gr sonucu kg'a çeviriyoruz
             Console.WriteLine("Bir Top kağıttan çıkan kitap sayısı: "+TopCikanKitap());
             Console.WriteLine("Baskı için gereken tabaka sayısı: " + TabakaSayisi());
             Console.WriteLine("Baskı için gereken top sayısı: " + TopMiktari());
             Console.WriteLine("Kitabın Forma Sayısı: " + kagitOlcusuHesapla());
             Console.WriteLine("Bir top kağıdın fiyatı: " + kagitFiyati() / 1000+ " TL"); // TL cinsinden
             Console.WriteLine("Baskı rengine göre kalıp fiyatı: " + kalipFiyat() + " TL");
-            Console.WriteLine("Toplam kağıt tutarı: " + baskiKagitFiyati() / 1000+ "TL"); // TL cinsinden
+            Console.WriteLine("Toplam kağıt tutarı: " + baskiKagitFiyati() + "TL"); 
             Console.Read();
             
         }
